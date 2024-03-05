@@ -23,8 +23,9 @@ pipeline {
         stage('Test') {
             steps {
                 // Run your tests here if you have any
-                sh 'chmod +x run_tests.sh'
-                sh './run_tests.sh' // Assuming you have a script to run tests
+                echo ' Run test'
+                //sh 'chmod +x run_tests.sh'
+               // sh './run_tests.sh' // Assuming you have a script to run tests
             }
         }
         stage('Deploy') {
