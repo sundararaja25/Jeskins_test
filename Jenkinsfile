@@ -1,11 +1,14 @@
 pipeline {
     agent { label "dev-master"}
-    
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from your Git repository
-                git url 'https://github.com/sundararaja25/Jeskins_test.git'
+                    git(
+                    url: "https://github.com/sundararaja25/Jeskins_test.git",
+                    branch: "master",
+                    changelog: true,
+                    poll: true
+               )
             }
         }
         stage('Build') {
